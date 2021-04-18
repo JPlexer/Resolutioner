@@ -13,32 +13,33 @@ var sideTwo: Double = 9
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var mainView: UIView!
+//    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var firstResField: SFMonoTextField!
     @IBOutlet weak var secondResField: SFMonoTextField!
     @IBOutlet weak var aspectLockButton: StandardButton!
     
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var internalDismissKeyboardButton: UIButton!
     
     @IBOutlet weak var mainHeaderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView.layer.cornerRadius = 20
-        mainView.layer.cornerCurve = .continuous
+//        mainView.layer.cornerRadius = 20
+//        mainView.layer.cornerCurve = .continuous
         
         mainHeaderView.layer.cornerRadius = 20
         mainHeaderView.layer.cornerCurve = .continuous
         mainHeaderView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
       
-        mainHeaderView.layer.shadowColor = UIColor.black.cgColor
-        mainHeaderView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        mainHeaderView.layer.shadowRadius = 5
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        shadowView.layer.shadowRadius = 5
         if traitCollection.userInterfaceStyle == .dark {
-            mainHeaderView.layer.shadowOpacity = 0
+            shadowView.layer.shadowOpacity = 0
         } else {
-            mainHeaderView.layer.shadowOpacity = 0.4
+            shadowView.layer.shadowOpacity = 0.4
         }
 
         internalDismissKeyboardButton.isHidden = true
@@ -48,9 +49,9 @@ class ViewController: UIViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         
         if traitCollection.userInterfaceStyle == .dark {
-            mainHeaderView.layer.shadowOpacity = 0
+            shadowView.layer.shadowOpacity = 0
         } else {
-            mainHeaderView.layer.shadowOpacity = 0.4
+            shadowView.layer.shadowOpacity = 0.4
         }
     }
 
@@ -70,14 +71,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stoppedEditing(_ sender: Any) {
-        internalDismissKeyboardButton.isEnabled = false
-        UIView.animate(withDuration: 0.3) {
-            self.internalDismissKeyboardButton.alpha = 0
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.31) {
-            self.internalDismissKeyboardButton.isHidden = true
+        if !firstResField.isEditing {
+            if !secondResField.isEditing {
+                internalDismissKeyboardButton.isEnabled = false
+                UIView.animate(withDuration: 0.3) {
+                    self.internalDismissKeyboardButton.alpha = 0
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.31) {
+                    self.internalDismissKeyboardButton.isHidden = true
+                }
+            }
         }
     }
+    
     @IBAction func lockAspectRatio(_ sender: Any) {
         aspectIsLocked = !aspectIsLocked
         if aspectIsLocked {
