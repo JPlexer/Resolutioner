@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var aspectLockButton: StandardButton!
     
     @IBOutlet weak var shadowView: UIView!
+    
     @IBOutlet weak var internalDismissKeyboardButton: UIButton!
     
     @IBOutlet weak var mainHeaderView: UIView!
@@ -28,9 +29,9 @@ class ViewController: UIViewController {
 //        mainView.layer.cornerRadius = 20
 //        mainView.layer.cornerCurve = .continuous
         
-        mainHeaderView.layer.cornerRadius = 20
-        mainHeaderView.layer.cornerCurve = .continuous
-        mainHeaderView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        shadowView.layer.cornerRadius = 20
+        shadowView.layer.cornerCurve = .continuous
+        shadowView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
       
         shadowView.layer.shadowColor = UIColor.black.cgColor

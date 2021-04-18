@@ -48,7 +48,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2G8-R4-m4K" secondAttribute="trailing" constant="20" id="UIu-LC-Xdn"/>
                                     <constraint firstAttribute="height" constant="70" id="gaq-jx-j3G"/>
@@ -58,7 +58,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIF-XU-14J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESOLUTION CALCULATOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl0-4H-0aS">
                                 <rect key="frame" x="16" y="144" width="343" height="18"/>
@@ -149,9 +149,9 @@
                             <constraint firstItem="WIF-XU-14J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="b0M-HP-eQB"/>
                             <constraint firstItem="8YC-0V-gp2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="bZe-nd-fNn"/>
                             <constraint firstItem="sfW-CN-Ydc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cvv-HX-zGl"/>
-                            <constraint firstItem="TLg-Qc-MTB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f2B-Jy-HBH"/>
+                            <constraint firstItem="TLg-Qc-MTB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="f2B-Jy-HBH"/>
                             <constraint firstItem="WIF-XU-14J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fSi-2T-UdG"/>
-                            <constraint firstItem="TLg-Qc-MTB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gS7-cQ-LCl"/>
+                            <constraint firstItem="TLg-Qc-MTB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="16" id="gS7-cQ-LCl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KAw-DM-hgb" secondAttribute="trailing" id="qJ1-b8-8Qv"/>
                             <constraint firstItem="KAw-DM-hgb" firstAttribute="top" secondItem="fl0-4H-0aS" secondAttribute="bottom" constant="6" id="qMJ-do-2fB"/>
                             <constraint firstItem="fl0-4H-0aS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rrD-1y-WME"/>
@@ -226,9 +226,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtH-dv-VJQ">
-                                <rect key="frame" x="16" y="134" width="343" height="223.66666666666663"/>
+                                <rect key="frame" x="16" y="134" width="343" height="223"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4K5-bu-QtL">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="224"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="223"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-Pf-4rA">
