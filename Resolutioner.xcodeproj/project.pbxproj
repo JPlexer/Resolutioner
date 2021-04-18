@@ -16,6 +16,7 @@
 		6642E91C2629CC2500BE7184 /* ResolutionerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642E91B2629CC2500BE7184 /* ResolutionerTests.swift */; };
 		6642E9272629CC2500BE7184 /* ResolutionerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642E9262629CC2500BE7184 /* ResolutionerUITests.swift */; };
 		66C5BA71262B708700189C06 /* StandardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5BA70262B708700189C06 /* StandardViews.swift */; };
+		66C5BA73262C124F00189C06 /* EditRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5BA72262C124F00189C06 /* EditRatioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6642E9282629CC2500BE7184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6642E9342629CCC000BE7184 /* Resolutioner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resolutioner.entitlements; sourceTree = "<group>"; };
 		66C5BA70262B708700189C06 /* StandardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardViews.swift; sourceTree = "<group>"; };
+		66C5BA72262C124F00189C06 /* EditRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRatioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				6642E9082629CC1800BE7184 /* ViewController.swift */,
 				66C5BA70262B708700189C06 /* StandardViews.swift */,
 				6642E90A2629CC1800BE7184 /* Main.storyboard */,
+				66C5BA72262C124F00189C06 /* EditRatioViewController.swift */,
 				6642E90D2629CC2400BE7184 /* Assets.xcassets */,
 				6642E90F2629CC2400BE7184 /* LaunchScreen.storyboard */,
 				6642E9122629CC2400BE7184 /* Info.plist */,
@@ -265,6 +268,7 @@
 			files = (
 				6642E9092629CC1800BE7184 /* ViewController.swift in Sources */,
 				66C5BA71262B708700189C06 /* StandardViews.swift in Sources */,
+				66C5BA73262C124F00189C06 /* EditRatioViewController.swift in Sources */,
 				6642E9052629CC1800BE7184 /* AppDelegate.swift in Sources */,
 				6642E9072629CC1800BE7184 /* SceneDelegate.swift in Sources */,
 			);

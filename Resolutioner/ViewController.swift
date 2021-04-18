@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+var aspectIsLocked = true
+var sideOne: Double = 16
+var sideTwo: Double = 9
 
-    var aspectIsLocked = true
-    var oneToTwoRatio: Double = 9/16
-    var twoToOneRatio: Double = 16/9
+class ViewController: UIViewController {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var firstResField: SFMonoTextField!
@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         }
 
         internalDismissKeyboardButton.isHidden = true
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -90,21 +89,28 @@ class ViewController: UIViewController {
     
     @IBAction func typedInRes1(_ sender: Any) {
         if aspectIsLocked {
-            secondResField.text = "\(Int((Double(firstResField.text ?? "0") ?? 1) * oneToTwoRatio))"
+            secondResField.text = "\(Int((Double(firstResField.text ?? "0") ?? 1) * (sideTwo / sideOne)))"
         }
         if firstResField.text == "" {
             secondResField.text = ""
         }
+        UserDefaults.standard.set(firstResField.text, forKey: "LastRes1")
     }
     
     @IBAction func typedInRes2(_ sender: Any) {
         if aspectIsLocked {
-            firstResField.text = "\(Int((Double(secondResField.text ?? "0") ?? 1) * twoToOneRatio))"
+            firstResField.text = "\(Int((Double(secondResField.text ?? "0") ?? 1) * (sideOne / sideTwo)))"
         }
         if secondResField.text == "" {
             firstResField.text = ""
         }
+        UserDefaults.standard.set(firstResField.text, forKey: "LastRes2")
     }
     
 }
 
+// Implement loading of saved last values
+// Implement all of saved last ratio
+// Move calculator out of view
+// Create num pad in middle
+// Add two cells at bottom of view
