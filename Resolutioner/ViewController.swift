@@ -46,25 +46,22 @@ class ViewController: UIViewController {
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
         shadowView.layer.shadowRadius = 5
-        if traitCollection.userInterfaceStyle == .dark {
-            shadowView.layer.shadowOpacity = 0
-        } else {
-            shadowView.layer.shadowOpacity = 0.4
-        }
+        shadowView.layer.shadowOpacity = 0.4
+        
 
         internalDismissKeyboardButton.isEnabled = false
         internalDismissKeyboardButton.alpha = 0
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        
-        if traitCollection.userInterfaceStyle == .dark {
-            shadowView.layer.shadowOpacity = 0
-        } else {
-            shadowView.layer.shadowOpacity = 0.4
-        }
-    }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//        
+//        if traitCollection.userInterfaceStyle == .dark {
+//            shadowView.layer.shadowOpacity = 0.4
+//        } else {
+//            shadowView.layer.shadowOpacity = 0.4
+//        }
+//    }
 
     @IBAction func dismissKeyboards(_ sender: Any) {
         firstResField.resignFirstResponder()
