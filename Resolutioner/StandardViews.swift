@@ -22,6 +22,21 @@ class SFMonoTextField: UITextField {
     }
 }
 
+class StandardTextField: UITextField {
+    override func draw(_ rect: CGRect) {
+//        self.font = UIFont.monospacedSystemFont(ofSize: self.font!.pointSize, weight: .regular)
+        self.borderStyle = .roundedRect
+//        self.layer.backgroundColor = UIColor(named: "Background")?.cgColor
+        self.backgroundColor = UIColor(named: "Background")
+//        self.backgroundColor = .clear
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor(named: "AccentColor")?.cgColor
+        self.layer.cornerRadius = 10
+        self.layer.cornerCurve = .continuous
+        self.layer.masksToBounds = true
+    }
+}
+
 class SFMonoLabel: UILabel {
     override func draw(_ rect: CGRect) {
         self.font = UIFont.monospacedSystemFont(ofSize: self.font!.pointSize, weight: .regular)

@@ -97,3 +97,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+func lightHaptics() {
+//    if userDefaultsStandard.object(forKey: "syncicloud hapticsOnOff") as! String == "On" {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+//    }
+}
+
+func softHaptics() {
+//    if userDefaultsStandard.object(forKey: "syncicloud hapticsOnOff") as! String == "On" {
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+//    }
+}
+
+func successHaptics() {
+//    if userDefaultsStandard.object(forKey: "syncicloud hapticsOnOff") as! String == "On" {
+    UINotificationFeedbackGenerator().notificationOccurred(.success)
+//    }
+}
+
+func errorHaptics() {
+//    if userDefaultsStandard.object(forKey: "syncicloud hapticsOnOff") as! String == "On" {
+    UINotificationFeedbackGenerator().notificationOccurred(.error)
+//    }
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		6642E9112629CC2400BE7184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6642E90F2629CC2400BE7184 /* LaunchScreen.storyboard */; };
 		6642E91C2629CC2500BE7184 /* ResolutionerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642E91B2629CC2500BE7184 /* ResolutionerTests.swift */; };
 		6642E9272629CC2500BE7184 /* ResolutionerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642E9262629CC2500BE7184 /* ResolutionerUITests.swift */; };
+		666ADDAC262DE1D2003112C1 /* SavedPresetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ADDAB262DE1D2003112C1 /* SavedPresetsTableViewController.swift */; };
+		666ADDAE262DE24F003112C1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ADDAD262DE24F003112C1 /* DataModel.swift */; };
+		666ADDB1262DE744003112C1 /* HandySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 666ADDB0262DE744003112C1 /* HandySwift */; };
+		666ADDB3262DEDDC003112C1 /* NewPresetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ADDB2262DEDDC003112C1 /* NewPresetViewController.swift */; };
 		66C5BA71262B708700189C06 /* StandardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5BA70262B708700189C06 /* StandardViews.swift */; };
 		66C5BA73262C124F00189C06 /* EditRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5BA72262C124F00189C06 /* EditRatioViewController.swift */; };
 		66C5BA75262D52FF00189C06 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C5BA74262D52FF00189C06 /* AboutTableViewController.swift */; };
@@ -53,6 +57,9 @@
 		6642E9262629CC2500BE7184 /* ResolutionerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionerUITests.swift; sourceTree = "<group>"; };
 		6642E9282629CC2500BE7184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6642E9342629CCC000BE7184 /* Resolutioner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Resolutioner.entitlements; sourceTree = "<group>"; };
+		666ADDAB262DE1D2003112C1 /* SavedPresetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPresetsTableViewController.swift; sourceTree = "<group>"; };
+		666ADDAD262DE24F003112C1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		666ADDB2262DEDDC003112C1 /* NewPresetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPresetViewController.swift; sourceTree = "<group>"; };
 		66C5BA70262B708700189C06 /* StandardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardViews.swift; sourceTree = "<group>"; };
 		66C5BA72262C124F00189C06 /* EditRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRatioViewController.swift; sourceTree = "<group>"; };
 		66C5BA74262D52FF00189C06 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666ADDB1262DE744003112C1 /* HandySwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +119,10 @@
 				6642E9062629CC1800BE7184 /* SceneDelegate.swift */,
 				6642E9082629CC1800BE7184 /* ViewController.swift */,
 				66C5BA70262B708700189C06 /* StandardViews.swift */,
+				666ADDB2262DEDDC003112C1 /* NewPresetViewController.swift */,
 				6642E90A2629CC1800BE7184 /* Main.storyboard */,
+				666ADDAB262DE1D2003112C1 /* SavedPresetsTableViewController.swift */,
+				666ADDAD262DE24F003112C1 /* DataModel.swift */,
 				66C5BA72262C124F00189C06 /* EditRatioViewController.swift */,
 				66C5BA74262D52FF00189C06 /* AboutTableViewController.swift */,
 				6642E90D2629CC2400BE7184 /* Assets.xcassets */,
@@ -155,6 +166,9 @@
 			dependencies = (
 			);
 			name = Resolutioner;
+			packageProductDependencies = (
+				666ADDB0262DE744003112C1 /* HandySwift */,
+			);
 			productName = Resolutioner;
 			productReference = 6642E9012629CC1800BE7184 /* Resolutioner.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 6642E8F82629CC1800BE7184;
+			packageReferences = (
+				666ADDAF262DE744003112C1 /* XCRemoteSwiftPackageReference "HandySwift" */,
+			);
 			productRefGroup = 6642E9022629CC1800BE7184 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,6 +290,9 @@
 				66C5BA71262B708700189C06 /* StandardViews.swift in Sources */,
 				66C5BA73262C124F00189C06 /* EditRatioViewController.swift in Sources */,
 				6642E9052629CC1800BE7184 /* AppDelegate.swift in Sources */,
+				666ADDB3262DEDDC003112C1 /* NewPresetViewController.swift in Sources */,
+				666ADDAC262DE1D2003112C1 /* SavedPresetsTableViewController.swift in Sources */,
+				666ADDAE262DE24F003112C1 /* DataModel.swift in Sources */,
 				6642E9072629CC1800BE7184 /* SceneDelegate.swift in Sources */,
 				66C5BA75262D52FF00189C06 /* AboutTableViewController.swift in Sources */,
 			);
@@ -613,6 +633,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		666ADDAF262DE744003112C1 /* XCRemoteSwiftPackageReference "HandySwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/HandySwift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		666ADDB0262DE744003112C1 /* HandySwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 666ADDAF262DE744003112C1 /* XCRemoteSwiftPackageReference "HandySwift" */;
+			productName = HandySwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6642E8F92629CC1800BE7184 /* Project object */;
 }

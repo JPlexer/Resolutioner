@@ -30,6 +30,7 @@ class EditRatioViewController: UIViewController {
     
     
     @IBAction func dismiss(_ sender: Any) {
+        successHaptics()
        dismiss(animated: true, completion: nil)
     }
     
