@@ -22,10 +22,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var internalDismissKeyboardButton: UIButton!
     
+  
     @IBOutlet weak var mainHeaderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.double(forKey: "SideOne") == 0 {
+            UserDefaults.standard.set(Double(16), forKey: "SideOne")
+        }
+        if UserDefaults.standard.double(forKey: "SideTwo") == 0 {
+            UserDefaults.standard.set(Double(9), forKey: "SideTwo")
+        }
+        
+        
 //        mainView.layer.cornerRadius = 20
 //        mainView.layer.cornerCurve = .continuous
         
@@ -43,7 +52,8 @@ class ViewController: UIViewController {
             shadowView.layer.shadowOpacity = 0.4
         }
 
-        internalDismissKeyboardButton.isHidden = true
+        internalDismissKeyboardButton.isEnabled = false
+        internalDismissKeyboardButton.alpha = 0
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -62,29 +72,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func beganEditing(_ sender: Any) {
-//        currentRatio = Double(firstResField.text!)! / Double(secondResField.text!)!
-        internalDismissKeyboardButton.isEnabled = true
-        internalDismissKeyboardButton.isHidden = false
-        self.internalDismissKeyboardButton.alpha = 0
-        UIView.animate(withDuration: 0.3) {
-            self.internalDismissKeyboardButton.alpha = 1
-        }
+//        if internalDismissKeyboardButton.isHidden{
+            internalDismissKeyboardButton.isEnabled = true
+//            internalDismissKeyboardButton.isHidden = false
+//            internalDismissKeyboardButton.alpha = 0
+            UIView.animate(withDuration: 0.3) {
+                self.internalDismissKeyboardButton.alpha = 1
+            }
+//        }
     }
     
     @IBAction func stoppedEditing(_ sender: Any) {
-        if !firstResField.isEditing {
-            if !secondResField.isEditing {
-                internalDismissKeyboardButton.isEnabled = false
-                UIView.animate(withDuration: 0.3) {
-                    self.internalDismissKeyboardButton.alpha = 0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.31) {
-                    self.internalDismissKeyboardButton.isHidden = true
-                }
-            }
+        //        if !(firstResField.isEditing || secondResField.isEditing) {
+        internalDismissKeyboardButton.isEnabled = false
+        UIView.animate(withDuration: 0.3) {
+            self.internalDismissKeyboardButton.alpha = 0
         }
+        internalDismissKeyboardButton.isEnabled = false
     }
-    
+
+
     @IBAction func lockAspectRatio(_ sender: Any) {
         aspectIsLocked = !aspectIsLocked
         if aspectIsLocked {

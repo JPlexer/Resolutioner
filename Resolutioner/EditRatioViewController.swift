@@ -24,6 +24,11 @@ class EditRatioViewController: UIViewController {
         sideTwoField.text = "\(sideTwo)"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        sideOneField.becomeFirstResponder()
+    }
+    
+    
     @IBAction func dismiss(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
