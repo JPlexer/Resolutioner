@@ -8,8 +8,6 @@
 import UIKit
 
 var aspectIsLocked = true
-var sideOne: Double = 16
-var sideTwo: Double = 9
 
 class ViewController: UIViewController {
     
@@ -63,7 +61,12 @@ class ViewController: UIViewController {
 //        }
 //    }
 
+    @IBAction func editRatio(_ sender: Any) {
+        lightHaptics()
+    }
+    
     @IBAction func dismissKeyboards(_ sender: Any) {
+        softHaptics()
         firstResField.resignFirstResponder()
         secondResField.resignFirstResponder()
     }
@@ -90,6 +93,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func lockAspectRatio(_ sender: Any) {
+        lightHaptics()
         aspectIsLocked = !aspectIsLocked
         if aspectIsLocked {
             aspectLockButton.setTitle("Unlock Ratio", for: .normal)
@@ -100,7 +104,7 @@ class ViewController: UIViewController {
     
     @IBAction func typedInRes1(_ sender: Any) {
         if aspectIsLocked {
-            secondResField.text = "\(Int((Double(firstResField.text ?? "0") ?? 1) * (sideTwo / sideOne)))"
+            secondResField.text = "\(Int((Double(firstResField.text ?? "0") ?? 1) * (sideTwo() / sideOne())))"
         }
         if firstResField.text == "" {
             secondResField.text = ""
@@ -110,7 +114,7 @@ class ViewController: UIViewController {
     
     @IBAction func typedInRes2(_ sender: Any) {
         if aspectIsLocked {
-            firstResField.text = "\(Int((Double(secondResField.text ?? "0") ?? 1) * (sideOne / sideTwo)))"
+            firstResField.text = "\(Int((Double(secondResField.text ?? "0") ?? 1) * (sideOne() / sideTwo())))"
         }
         if secondResField.text == "" {
             firstResField.text = ""
@@ -119,6 +123,8 @@ class ViewController: UIViewController {
     }
     
 }
+
+
 
 // Implement loading of saved last values
 // Implement all of saved last ratio

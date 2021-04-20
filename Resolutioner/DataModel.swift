@@ -125,3 +125,19 @@ func DeleteResSideTwo(forIndex: Int) {
 
 
 
+
+func sideOne() -> Double {
+    return UserDefaults.standard.double(forKey: "SideOne")
+}
+
+func sideTwo() -> Double {
+    return UserDefaults.standard.double(forKey: "SideTwo")
+}
+
+func saveSideOne(with: Double) {
+    UserDefaults.standard.set(with, forKey: "SideOne")
+}
+
+func saveSideTwo(with: Double) {
+    UserDefaults.standard.set(with, forKey: "SideTwo")
+}

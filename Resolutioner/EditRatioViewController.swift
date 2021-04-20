@@ -12,16 +12,23 @@ class EditRatioViewController: UIViewController {
     @IBOutlet weak var sideOneField: SFMonoTextField!
     @IBOutlet weak var sideTwoField: SFMonoTextField!
     
-    @IBOutlet weak var mainBlurView: UIVisualEffectView!
+    @IBOutlet weak var insideMainView: UIView!
     @IBOutlet weak var descLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainBlurView.layer.cornerRadius = 20
-        mainBlurView.layer.cornerCurve = .continuous
+        insideMainView.layer.cornerRadius = 20
+        insideMainView.layer.cornerCurve = .continuous
         
-        sideOneField.text = "\(sideOne)"
-        sideTwoField.text = "\(sideTwo)"
+        
+        insideMainView.layer.shadowColor = UIColor.black.cgColor
+        insideMainView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        insideMainView.layer.shadowRadius = 5
+        insideMainView.layer.shadowOpacity = 0.4
+        
+        
+        sideOneField.text = "\(sideOne())"
+        sideTwoField.text = "\(sideTwo())"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,8 +42,8 @@ class EditRatioViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        sideOne = Double(sideOneField.text ?? "1") ?? 1
-        sideTwo = Double(sideTwoField.text ?? "1") ?? 1
+        saveSideOne(with: Double(sideOneField.text ?? "1") ?? 1)
+        saveSideTwo(with: Double(sideTwoField.text ?? "1") ?? 1)
     }
     
 }

@@ -47,6 +47,7 @@ class NewPresetViewController: UIViewController {
     }
 
     @IBAction func cancel(_ sender: Any) {
+        lightHaptics()
         dismiss(animated: true, completion: nil)
     }
     
