@@ -55,10 +55,15 @@ class SavedPresetsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedIndex = indexPath
+//        if self.splitViewController?.traitCollection.horizontalSizeClass != .compact {
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PresetDetails")
+//            self.splitViewController?.showDetailViewController(vc, sender: self)
+//        } else {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PresetDetails")
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
+//        }
 
     }
     

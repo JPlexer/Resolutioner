@@ -127,6 +127,10 @@ class CustomHeaderView: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var fakeBackgroundView: UIView!
     
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
