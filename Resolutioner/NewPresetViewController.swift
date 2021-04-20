@@ -39,6 +39,9 @@ class NewPresetViewController: UIViewController {
         
         if senderIsEditor {
             titleLabel.text = "Edit Preset"
+            nameField.text = PresetName(forIndex: selectedIndex.section)
+            sideOneField.text = PresetResSideOne(forIndex: selectedIndex.section)
+            sideTwoField.text = PresetResSideTwo(forIndex: selectedIndex.section)
         } else {
             titleLabel.text = "New Preset"
         }
@@ -60,10 +63,13 @@ class NewPresetViewController: UIViewController {
                 SaveName(with: nameField.text ?? "", forIndex: allIDs.count - 1)
                 SaveResSideOne(with: sideOneField.text ?? "", forIndex: allIDs.count - 1)
                 SaveResSideTwo(with: sideTwoField.text ?? "", forIndex: allIDs.count - 1)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdatePresetsTable"), object: nil)
             } else {
                 SaveName(with: nameField.text ?? "", forIndex: selectedIndex.section)
                 SaveResSideOne(with: sideOneField.text ?? "", forIndex: selectedIndex.section)
                 SaveResSideTwo(with: sideTwoField.text ?? "", forIndex: selectedIndex.section)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateDetailsView"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdatePresetsTable"), object: nil)
             }
             successHaptics()
             dismiss(animated: true, completion: nil)

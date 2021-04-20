@@ -127,7 +127,4 @@ class ViewController: UIViewController {
 
 
 // Implement loading of saved last values
-// Implement all of saved last ratio
-// Move calculator out of view
 // Create num pad in middle
-// Add two cells at bottom of view
